@@ -1,15 +1,3 @@
-body {
-  margin: 30px;
-  color: lightgray;
-}
-.container {
-  padding: 0%;
-}
-.wrapper {
-  margin: 0 auto;
-  max-width: 525px;
-  min-width: 525px;
-}
 .weather-project {
   padding: 25px;
   border: 1px solid lightgray;
