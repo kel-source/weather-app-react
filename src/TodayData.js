@@ -37,7 +37,6 @@ export default function TodayData() {
               <br />
               <a
                 href="https://en.wikipedia.org/wiki/Beaufort_scale"
-                target="_blank"
                 className="beaufort-scale-link"
               >
                 Beaufort Scale

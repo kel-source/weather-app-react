@@ -13,12 +13,12 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
-                <strong>10°</strong>
+                <div className="col">
+                <strong>11°</strong>
                 </div>
             </div>
             </div>
@@ -30,12 +30,12 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
-                <strong>10°</strong>
+                <div className="col">
+                <strong>11°</strong>
                 </div>
             </div>
             </div>
@@ -47,11 +47,11 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
+                <div className="col">
                 <strong>10°</strong>
                 </div>
             </div>
@@ -64,12 +64,12 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
-                <strong>10°</strong>
+                <div className="col">
+                <strong>9°</strong>
                 </div>
             </div>
             </div>
@@ -81,11 +81,11 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
+                <div className="col">
                 <strong>10°</strong>
                 </div>
             </div>
@@ -98,12 +98,12 @@ export default function Forecast() {
             </div>
             <div className="row">
                 <div className="col">
-                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"/>
+                <img src = "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png" alt=""/>
                 </div>
             </div>
             <div className="row">
-                <div className="col forecastTemperatures">
-                <strong>10°</strong>
+                <div className="col">
+                <strong>11°</strong>
                 </div>
             </div>
             </div>
