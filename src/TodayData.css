@@ -1,0 +1,14 @@
+h2 small {
+    font-size: 17px;
+    position: relative;
+    top: -50px;
+  }
+  .todayIcon {
+    width: 110px;
+    margin: 0 auto;
+  }
+  .temperature {
+    font-size: 85px;
+    line-height: 1;
+    color: black;
+  }
