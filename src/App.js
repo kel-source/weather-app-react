@@ -1,6 +1,7 @@
 import './App.css';
-import TodayData from './TodayData';
 import TodayOverview from './TodayOverview';
+import TodayData from './TodayData';
+import Forecast from './Forecast';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <br />
       <TodayOverview />
       <TodayData />
+      <Forecast />
     </div>
   );
 }

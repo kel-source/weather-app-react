@@ -3,7 +3,7 @@ import "./TodayOverview.css";
 
 export default function TodayOverview() {
   let overviewData = {
-    location: "London",
+    location: "London (GB)",
     date: "Saturday 21 November",
     time: "15:00",
     description: "Overcast Clouds"

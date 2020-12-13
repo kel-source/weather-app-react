@@ -1,0 +1,12 @@
+.Forecast {
+    text-align: center;
+}
+img {
+    width: 50px;
+}
+.col {
+    padding: 0px;
+}
+.forecastTemperatures {
+    font-size: 13px;
+}
