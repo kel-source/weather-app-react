@@ -6,7 +6,7 @@ export default function TodayOverview() {
     location: "London (GB)",
     date: "Saturday 21 November",
     time: "15:00",
-    description: "Overcast Clouds"
+    description: "Overcast Clouds",
   };
   return (
     <div className="TodayOverview">

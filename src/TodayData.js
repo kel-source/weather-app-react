@@ -7,7 +7,7 @@ export default function TodayData() {
     humidity: "75",
     wind: "5",
     imgUrl:
-      "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
+      "https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png",
   };
   return (
     <div className="TodayData">
@@ -38,7 +38,7 @@ export default function TodayData() {
               <a
                 href="https://en.wikipedia.org/wiki/Beaufort_scale"
                 className="beaufort-scale-link"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Beaufort Scale
