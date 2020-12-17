@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "./TodayData.css";
+import FormattedDate from "./FormattedDate";
 
 export default function TodayData(props) {
   const [ready, setReady] = useState(false);
@@ -10,6 +11,7 @@ export default function TodayData(props) {
     setData({
       city: response.data.name,
       country: response.data.sys.country,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
@@ -25,7 +27,9 @@ export default function TodayData(props) {
           {data.city} ({data.country})
         </h1>
         <ul>
-          <li>Thursday 17 December | 20:15</li>
+          <li>
+            <FormattedDate date={data.date} />
+          </li>
           <li className="weather-description">{data.description}</li>
         </ul>
         <div className="row">
