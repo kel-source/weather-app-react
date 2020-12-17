@@ -1,5 +1,4 @@
 import "./App.css";
-import TodayOverview from "./TodayOverview";
 import TodayData from "./TodayData";
 import Forecast from "./Forecast";
 
@@ -23,7 +22,6 @@ function App() {
           </form>
         </div>
         <br />
-        <TodayOverview />
         <TodayData />
         <Forecast />
       </div>

@@ -1,14 +1,32 @@
+h1,
+strong {
+  color: black;
+  font-weight: 750;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 110px;
+  margin: 0 auto;
+}
 h2 small {
-    font-size: 17px;
-    position: relative;
-    top: -50px;
-  }
-  .todayIcon {
-    width: 110px;
-    margin: 0 auto;
-  }
-  .temperature {
-    font-size: 85px;
-    line-height: 1;
-    color: black;
-  }
+  font-size: 17px;
+  position: relative;
+  top: -50px;
+}
+.weather-description {
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+.temperature {
+  font-size: 85px;
+  line-height: 1;
+  color: black;
+}

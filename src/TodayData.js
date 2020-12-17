@@ -4,50 +4,58 @@ import "./TodayData.css";
 
 export default function TodayData() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [windSpeed, setWindSpeed] = useState(null);
-  const [description, setDescription] = useState(null);
+  const [data, setData] = useState({});
 
   function handleResponse(response) {
-    setTemperature(Math.round(response.data.main.temp));
-    setHumidity(Math.round(response.data.main.humidity));
-    setWindSpeed(Math.round(response.data.wind.speed));
+    setData({
+      city: "London (GB)",
+      description: response.data.weather[0].description,
+      temperature: Math.round(response.data.main.temp),
+      humidity: Math.round(response.data.main.humidity),
+      windSpeed: Math.round(response.data.wind.speed),
+    });
     setReady(true);
   }
 
   if (ready) {
     return (
-      <div className="row">
-        <div className="col-3">
-          <img src={""} alt="today's weather" className="todayIcon" />
-        </div>
-        <div className="col-5">
-          <h2>
-            <span className="temperature">{temperature}</span>
-            <small>°C | °F</small>
-          </h2>
-        </div>
-        <div className="col-4">
-          <ul>
-            <li>
-              <strong>Humidity: </strong>
-              {humidity}%
-            </li>
-            <li>
-              <strong>Wind: </strong>
-              {windSpeed}km/h
-              <br />
-              <a
-                href="https://en.wikipedia.org/wiki/Beaufort_scale"
-                className="beaufort-scale-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Beaufort Scale
-              </a>
-            </li>
-          </ul>
+      <div className="TodayData">
+        <h1>{data.city}</h1>
+        <ul>
+          <li>Thursday 17 December | 20:15</li>
+          <li className="weather-description">{data.description}</li>
+        </ul>
+        <div className="row">
+          <div className="col-3">
+            <img src={""} alt="today's weather" className="todayIcon" />
+          </div>
+          <div className="col-5">
+            <h2>
+              <span className="temperature">{data.temperature}</span>
+              <small>°C | °F</small>
+            </h2>
+          </div>
+          <div className="col-4">
+            <ul>
+              <li>
+                <strong>Humidity: </strong>
+                {data.humidity}%
+              </li>
+              <li>
+                <strong>Wind: </strong>
+                {data.windSpeed}km/h
+                <br />
+                <a
+                  href="https://en.wikipedia.org/wiki/Beaufort_scale"
+                  className="beaufort-scale-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Beaufort Scale
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );
