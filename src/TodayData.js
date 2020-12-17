@@ -2,13 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./TodayData.css";
 
-export default function TodayData() {
+export default function TodayData(props) {
   const [ready, setReady] = useState(false);
   const [data, setData] = useState({});
 
   function handleResponse(response) {
     setData({
-      city: "London (GB)",
+      city: response.data.name,
+      country: response.data.sys.country,
       description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
@@ -20,7 +21,9 @@ export default function TodayData() {
   if (ready) {
     return (
       <div className="TodayData">
-        <h1>{data.city}</h1>
+        <h1>
+          {data.city} ({data.country})
+        </h1>
         <ul>
           <li>Thursday 17 December | 20:15</li>
           <li className="weather-description">{data.description}</li>
@@ -61,8 +64,7 @@ export default function TodayData() {
     );
   } else {
     const apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
-    let city = "London";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";

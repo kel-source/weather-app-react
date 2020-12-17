@@ -22,7 +22,7 @@ function App() {
           </form>
         </div>
         <br />
-        <TodayData />
+        <TodayData defaultCity="London" />
         <Forecast />
       </div>
     </div>
