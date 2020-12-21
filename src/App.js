@@ -1,32 +1,27 @@
+import React from "react";
 import "./App.css";
-import TodayData from "./TodayData";
-import Forecast from "./Forecast";
+import WeatherApp from "./WeatherApp";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <div class="container">
-        <div className="city-search">
-          <form>
-            <input
-              className="city"
-              type="search"
-              placeholder="Enter a city..."
-              autoComplete="off"
-              autoFocus
-            />
-            <input type="submit" className="btn btn-secondary" />
-            <button type="button" className="btn btn-light" id="current-button">
-              Current
-            </button>
-          </form>
+      <div className="container">
+        <div className="wrapper">
+          <div className="weather-project">
+            <WeatherApp />
+          </div>
+          <p class="open-source">
+            <a
+              href="https://github.com/kel-source/weather-app-react"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open-source code
+            </a>{" "}
+            by Kathryn E. Lloyd
+          </p>
         </div>
-        <br />
-        <TodayData defaultCity="London" />
-        <Forecast />
       </div>
     </div>
   );
 }
-
-export default App;

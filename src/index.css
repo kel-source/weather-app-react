@@ -1,24 +1,4 @@
-
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-body {
-  margin: 30px;
-  color: lightgray;
-}
-.container {
-  padding: 0%;
-}
-.wrapper {
-  margin: 0 auto;
-  max-width: 525px;
-  min-width: 525px;
-}
-.open-source {
-    margin-top: 10px;
-    font-size: xx-small;
-    text-transform: none;
 }
