@@ -17,7 +17,11 @@ export default function TodayData(props) {
       </ul>
       <div className="row">
         <div className="col-3">
-          <img src={""} alt="today's weather" className="todayIcon" />
+          <img
+            src={props.data.icon}
+            alt="today's weather"
+            className="todayIcon"
+          />
         </div>
         <div className="col-5">
           <h2>

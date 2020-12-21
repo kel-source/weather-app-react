@@ -10,7 +10,7 @@ export default function App() {
           <div className="weather-project">
             <WeatherApp />
           </div>
-          <p class="open-source">
+          <p className="open-source">
             <a
               href="https://github.com/kel-source/weather-app-react"
               target="_blank"

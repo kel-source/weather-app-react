@@ -17,6 +17,7 @@ export default function WeatherApp() {
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
       windSpeed: Math.round(response.data.wind.speed),
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
     setReady(true);
   }
