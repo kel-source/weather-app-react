@@ -18,7 +18,7 @@ export default function UnitChange(props) {
         <span className="temperature">
           {props.celsius}
           <small>
-            °C |{" "}
+            °C <font color="lightgray">|</font>{" "}
             <a href="/" onClick={convertToFahrenheit}>
               °F
             </a>
@@ -36,7 +36,7 @@ export default function UnitChange(props) {
             <a href="/" onClick={convertToCelsius}>
               °C{" "}
             </a>
-            | °F
+            <font color="lightgray">|</font> °F
           </small>
         </span>
       </div>

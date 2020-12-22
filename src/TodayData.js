@@ -32,11 +32,11 @@ export default function TodayData(props) {
         <div className="col-4">
           <ul>
             <li>
-              <strong>Humidity: </strong>
+              <strong className="font">Humidity: </strong>
               {props.data.humidity}%
             </li>
             <li>
-              <strong>Wind: </strong>
+              <strong className="font">Wind: </strong>
               {props.data.windSpeed}km/h
               <br />
               <a

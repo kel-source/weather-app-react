@@ -2,12 +2,6 @@ body {
   margin: 30px;
   color: lightgray;
 }
-.weather-project {
-  padding: 25px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
 .container {
   padding: 0%;
 }
@@ -16,11 +10,17 @@ body {
   max-width: 525px;
   min-width: 525px;
 }
+.weather-project {
+  padding: 25px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
 .open-source {
   margin-top: 10px;
   font-size: xx-small;
   text-transform: none;
 }
 .btn {
-  margin-left: 5px;
+  margin-left: 4px;
 }
