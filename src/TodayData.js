@@ -1,6 +1,7 @@
 import React from "react";
 import "./TodayData.css";
 import FormattedDate from "./FormattedDate";
+import UnitChange from "./UnitChange";
 import FormattedBeaufortScale from "./FormattedBeaufortScale";
 
 export default function TodayData(props) {
@@ -25,8 +26,7 @@ export default function TodayData(props) {
         </div>
         <div className="col-5">
           <h2>
-            <span className="temperature">{props.data.temperature}</span>
-            <small>°C | °F</small>
+            <UnitChange celsius={props.data.temperature} />
           </h2>
         </div>
         <div className="col-4">
