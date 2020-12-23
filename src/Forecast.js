@@ -1,119 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Forecast.css";
+import FormattedForecast from "./FormattedForecast";
 
-export default function Forecast() {
-  return (
-    <div className="Forecast">
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState("");
+
+  function handleForecastResponse(response) {
+    setForecast(response.data);
+    setLoaded(true);
+  }
+  if (loaded && props.city === forecast.city.name) {
+    return (
       <div className="row">
-        <div className="col 2">
-          <div className="row">
-            <div className="col">20:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>11°</strong>
-            </div>
-          </div>
-        </div>
-        <div className="col 2">
-          <div className="row">
-            <div className="col">23:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>11°</strong>
-            </div>
-          </div>
-        </div>
-        <div className="col 2">
-          <div className="row">
-            <div className="col">02:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>10°</strong>
-            </div>
-          </div>
-        </div>
-        <div className="col 2">
-          <div className="row">
-            <div className="col">05:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>9°</strong>
-            </div>
-          </div>
-        </div>
-        <div className="col 2">
-          <div className="row">
-            <div className="col">08:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>10°</strong>
-            </div>
-          </div>
-        </div>
-        <div className="col 2">
-          <div className="row">
-            <div className="col">11:00</div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/cloudy-cloud-snow-weather-38920.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <strong>11°</strong>
-            </div>
-          </div>
-        </div>
+        {forecast.list.slice(0, 6).map(function (forecastLoop) {
+          return <FormattedForecast data={forecastLoop} />;
+        })}
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleForecastResponse);
+    return null;
+  }
 }

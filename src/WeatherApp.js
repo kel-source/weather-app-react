@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherApp.css";
+import CurrentWeather from "./CurrentWeather";
 import TodayData from "./TodayData";
 import Forecast from "./Forecast";
 
@@ -52,14 +53,19 @@ export default function WeatherApp() {
               onChange={handleInputChange}
             />
             <input type="submit" className="btn btn-secondary" />
-            <button type="button" className="btn btn-light" id="current-button">
+            <button
+              type="button"
+              className="btn btn-light"
+              id="current-button"
+              onClick={CurrentWeather}
+            >
               Current
             </button>
           </form>
         </div>
         <br />
         <TodayData data={data} />
-        <Forecast />
+        <Forecast city={data.city} />
       </div>
     );
   } else {

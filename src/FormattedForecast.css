@@ -1,0 +1,17 @@
+.FormattedForecast {
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+img {
+  width: 70px;
+}
+.col {
+  padding: 0px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+strong {
+  font-size: 13px;
+  line-height: 5px;
+}
