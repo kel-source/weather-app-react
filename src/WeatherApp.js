@@ -25,21 +25,6 @@ export default function WeatherApp() {
     setReady(true);
   }
 
-  function handleCurrentResponse(response) {
-    console.log(response.data);
-    setData({
-      city: response.data.city.name,
-      country: response.data.city.country,
-      date: new Date(response.data.list[0].dt * 1000),
-      description: response.data.list[0].weather[0].description,
-      temperature: Math.round(response.data.list[0].main.temp),
-      humidity: Math.round(response.data.list[0].main.humidity),
-      windSpeed: Math.round(response.data.list[0].wind.speed),
-      icon: `http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`,
-    });
-    setReady(true);
-  }
-
   function search() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
@@ -57,8 +42,8 @@ export default function WeatherApp() {
   function currentSearch(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let currentApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    axios.get(currentApiUrl).then(handleCurrentResponse);
+    let currentApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(currentApiUrl).then(handleResponse);
   }
 
   function getCurrentLocationData() {
