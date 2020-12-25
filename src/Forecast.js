@@ -11,6 +11,7 @@ export default function Forecast(props) {
     setForecast(response.data);
     setLoaded(true);
   }
+
   if (loaded && props.city === forecast.city.name) {
     return (
       <div className="row">

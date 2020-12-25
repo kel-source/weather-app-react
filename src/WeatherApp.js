@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherApp.css";
-import CurrentWeather from "./CurrentWeather";
 import TodayData from "./TodayData";
 import Forecast from "./Forecast";
 
@@ -9,8 +8,10 @@ export default function WeatherApp() {
   const [ready, setReady] = useState(false);
   const [data, setData] = useState({});
   const [city, setCity] = useState("London");
+  const apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
 
   function handleResponse(response) {
+    console.log(response.data);
     setData({
       city: response.data.name,
       country: response.data.sys.country,
@@ -24,8 +25,22 @@ export default function WeatherApp() {
     setReady(true);
   }
 
+  function handleCurrentResponse(response) {
+    console.log(response.data);
+    setData({
+      city: response.data.city.name,
+      country: response.data.city.country,
+      date: new Date(response.data.list[0].dt * 1000),
+      description: response.data.list[0].weather[0].description,
+      temperature: Math.round(response.data.list[0].main.temp),
+      humidity: Math.round(response.data.list[0].main.humidity),
+      windSpeed: Math.round(response.data.list[0].wind.speed),
+      icon: `http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`,
+    });
+    setReady(true);
+  }
+
   function search() {
-    const apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -37,6 +52,22 @@ export default function WeatherApp() {
 
   function handleInputChange(event) {
     setCity(event.target.value);
+  }
+
+  function currentSearch(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let currentApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(currentApiUrl).then(handleCurrentResponse);
+  }
+
+  function getCurrentLocationData() {
+    navigator.geolocation.getCurrentPosition(currentSearch);
+  }
+
+  function currentButton(event) {
+    event.preventDefault();
+    getCurrentLocationData();
   }
 
   if (ready) {
@@ -57,7 +88,7 @@ export default function WeatherApp() {
               type="button"
               className="btn btn-light"
               id="current-button"
-              onClick={CurrentWeather}
+              onClick={currentButton}
             >
               Current
             </button>
