@@ -8,10 +8,9 @@ export default function WeatherApp() {
   const [ready, setReady] = useState(false);
   const [data, setData] = useState({});
   const [city, setCity] = useState("London");
-  const apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
+  let apiKey = "bbf0836e2ed0d460df9b8ac5448ab908";
 
   function handleResponse(response) {
-    console.log(response.data);
     setData({
       city: response.data.name,
       country: response.data.sys.country,

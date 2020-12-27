@@ -31,7 +31,7 @@ export default function FormattedForecast(props) {
       </div>
       <div className="row">
         <div className="col">
-          <strong>{showTemperature()}°</strong>
+          <strong>{showTemperature()}°C</strong>
         </div>
       </div>
     </div>
